@@ -1,0 +1,42 @@
+Eltre Helper for CakePHP 2.0
+
+This file does not include the files for Elrte available at : https://github.com/Studio-42/elRTE
+
+Installation
+============
+
+1. From the elrte package move elrte-inner.css and elrte.min.css to /webroot/css/
+
+2. From the elrte package move elrte.min.js to /webroot/js
+
+3. Personal preference was to maintain the CakePHP folder structure, to move the images to /webroot/img and rename
+    all the paths within the css.
+
+Usage
+=====
+
+Controller
+----------
+<?php
+
+class MyController extends AppController
+{
+    public $helpers = array('Eltre.Editor');
+}
+?>
+
+View
+----
+<?php
+
+    echo $this->Form->input('Model.field'),
+        $this->Editor->load('Model.field');
+
+TODO
+====
+
+1. Improve the javascript integration, e.g. include the FormHelper directly.
+2. Include compatability with the the elFinder plugin.
+3. Remove the hard-coded jQuery dependency.
+
+
